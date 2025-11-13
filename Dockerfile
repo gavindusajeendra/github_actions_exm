@@ -1,4 +1,5 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:17.0.10-jdk-slim
+WORKDIR /app
+COPY target/springboot-images-new.jar app.jar
 EXPOSE 8080
-ADD target/springboot-images-new.jar springboot-images-new.jar
-ENTRYPOINT ["java", "-jar","/springboot-images-new.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
